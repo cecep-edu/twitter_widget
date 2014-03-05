@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>UPEx Twitter Widget Example</title>
+  </head>
+  <body>
+    <div id="twitter">
+    </div>
+    <script src="//code.jquery.com/jquery-2.1.0.min.js"></script>
+    <script>
+      $(function() {
+        $.ajax({
+          url: "https://cdn.syndication.twimg.com/widgets/timelines/441268959484977153",
+          dataType: "jsonp",
+          success: function(data) {
+            $("#twitter").html($(data.body).find('.e-entry-title'));
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
